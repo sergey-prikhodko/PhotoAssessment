@@ -480,7 +480,9 @@ fileprivate func makePipelineState(device: MTLDevice, functionName: String) -> M
     }
     else {
         computePipelineState = nil
-        print("missing metal function")
+        #if DEBUG
+            print("missing metal function")
+        #endif
     }
     return computePipelineState
 }
